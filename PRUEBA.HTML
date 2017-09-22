@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Prueba popovers</title>
+
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<script src="js/jquery.js"></script>
+<<script> 
+	$(function () {
+  		$('[data-toggle="popover"]').popover()
+	})
+</script>
+<body>
+	
+
+ <h3>Bootstrap tooltips &amp; popovers, and the <code>selector</code> option</h3>
+    
+    <p>This JS Bin demonstrates the use of the <code>selector</code> option passed to the Bootstrap tooltip and popover JavaScript plugins.</p>
+
+    <p>The <code>selector</code> 
+opción esencialmente le permite ejecutar tooltips y popovers utilizando jQuery <code>on</code> 
+, lo que significa que puede permitir HTML añadido dinámicamente con los selectores correctos para activar ventanas emergentes como si estuvieran presentes en el DOM originalmente cargado. Sin la opción del selector, sólo los elementos presentes en el DOM inicial desencadenarán tooltips; cualquiera que se agrega dinámicamente no.</p>
+
+    <p>
+Active la casilla de verificación que aparece a continuación y haga clic en el botón 'agregar nuevo popover' para observar las diferencias de comportamiento entre el uso de la opción de selector y no utilizarla.</p>
+    
+    <hr>
+
+    <div class="checkbox">
+      <label id="use-selector-label">
+        <input id="use-selector" type="checkbox">
+        <span data-title="debe volver a ejecutar esta bandeja JS para cambiar la opción de selector una vez que haya iniciado la demostración">Use selector option</span>
+      </label>
+    </div>
+
+<pre id="with-selector-code">
+$('body').popover({
+  selector: '.has-popover'
+});
+</pre>
+      
+<pre id="without-selector-code">
+$('.has-popover').popover();
+</pre>
+
+    <button class="btn btn-primary" id="add-button">Add new popover</button>
+
+    <div class="buttons">
+      <hr>
+
+      <button class="btn btn-block btn-success has-popover" data-title="Static" data-content="Este botón se especificó en el documento HTML inicial" data-placement="top">Working popover</button>
+    </div>
+
+
+
+<script>
+	
+function usingSelectorOption() {
+  return $('#use-selector').is(':checked');
+}
+
+function updateCodeView() {
+  $('#with-selector-code').toggle(usingSelectorOption());
+  $('#without-selector-code').toggle(!usingSelectorOption());
+}
+
+$(function() {
+  // Update code view when checkbox is toggled
+  updateCodeView();
+  $('#use-selector').click(function() {
+    updateCodeView();
+  });
+  
+  
+  var startedDemo = false;
+  $('#add-button').click(function() {
+    // One-time initialization
+    if (!startedDemo) {
+      if (usingSelectorOption()) {
+        $('body').popover({
+          selector: '.has-popover'
+        });
+      } else {
+        $('.has-popover').popover();
+      }
+        
+      startedDemo = true;
+    }
+    
+    // Disable selector checkbox, put a tooltip on it, and show the buttons panel
+    $('#use-selector').attr('disabled', 'disabled');
+    $('#use-selector-label span').tooltip();
+    $('.buttons').show();
+    
+    // Add a new button that triggers (or doesn't) a popover, with the appropriate message
+    var button = null;
+    if (usingSelectorOption()) {
+      button = $('<button class="btn btn-block btn-success has-popover" data-title="Dynamic" data-content="Este botón fue añadido dinámicamente por JavaScript" data-placement="top">Trabajar botón añadido dinámicamente</button>');
+    } else {
+      button = $('<button class="btn btn-block btn-default has-popover" data-title="Dynamic" data-content="Este botón fue añadido dinámicamente por JavaScript" data-placement="top">Botón que no funciona de forma dinámica</button>');
+    }
+
+    button.appendTo('.buttons');
+  });
+});
+
+</script>
+
+
+
+<script src="js/jquery.js"></script>
+<script src="js/button.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/collapse.js"></script>
+
+<script src="js/modal.js"></script>
+
+<script src="js/scrollspy.js"></script>
+<script src="js/tab.js"></script>
+<!-- <script src="../js/tether.min.js"></script> -->
+
+
+
+<script src="js/util.js"></script>
+
+
+
+<!-- <script src="js/popper.min.js"></script> -->
+
+<script src="js/umd/popper.min.js"></script>
+<script src="js/bootstrap.js" ></script>
+
+<script src="js/dropdown.js"></script>
+<script src="js/tooltip.js"></script>
+
+
+<!-- <script src="../js/popover.js"></script> -->
+
+
+<!-- <script src="../js/tether.min.js"></script> -->
+</body>
+</html>
