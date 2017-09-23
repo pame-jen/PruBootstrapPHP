@@ -2,118 +2,96 @@
 
 	include("compartidas/cabeceras.php");
  ?>
-
- 	<div class="container">
- 	<div class="row">
- 		<form action="" method="">
- 		<br>
- 		<br>
- 		<div class="form-group">
-			<label id="Lbl-Nombre" for="nombre">Ingrese Nombre
-				<!-- <span data-title="Debe Ingresar Nombre">Ingrese Nombre</span> -->
-				<input class="form-control" data-title="Debe Ingresar Nombre" data-placement="right" type="text" name="nombre" id="nombre">
-			</label>
-		</div>
-
-		<div class="form-group">
-			<label id="Lbl-Apellido" for="apellido">Ingrese Apellido
-				<!-- <span data-title="Debe Ingresar Apellido">Ingrese Apellido</span> -->
-				<input class="form-control" data-title="Debe Ingresar Apellido" data-placement="right" type="text" id="apellido">
-			</label>
-			
-		</div>
-
-		<div class="form-group">
-			<label id="Lbl-Edad" for="edad">Ingrese Edad
-				<!-- <span data-title="Debe Ingresar Edad">Ingrese Edad</span> -->
-				<input class="form-control" data-title="Debe Ingresar Edad" data-placement="right" type="number" id="edad">
-			</label>
-			
-		</div>
-
-		<br>
-		<button type="button" class="btn btn-primary" id="btnEnviar" >Enviar</button>
-		<br>	
+ <style>
+		#MyCarousel{
+			position: relative;
+		}
 		
- 		</form>
- 		
-	</div>
-	<div class="row">
- 			<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="prueba tooltip">
-  				Tooltip on top
-			</button>
+		#Principal{
+			position: absolute;
+			top:3%;
+			width: 75%;
+			left:12.5%;
+		}
+		
+		.carousel-item{
+			height: 48rem;
+		}
+		.dis-3{
+			background-color: rgba(147, 214, 195, 0.5);
+			border-radius: 5px;
+			padding-top:15px;
+			padding-bottom:15px; 
+			padding-left: 25px;
+			margin:5px;
+			margin-bottom: 45px;
+			color:white;
+		}
+		.dis-4{
+			background-color: rgba(147, 214, 195, 0.5);
+			border-radius: 5px;
+			padding-top:15px;
+			padding-bottom:15px; 
+			margin:5px;
+			margin-top: 45px;
+			color:white;
+		}
+		@media (min-width: 900px;) {
+			.carousel-item{height: 100%;}
+		}
+	</style>
 
-			<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-			  	Popover on top
-			</button>
-
-			<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+ 	<div id="MyCarousel" style="position: absolute;top:0px;" class="carousel slide" data-ride="carousel">
+	
+	  <div class="carousel-inner"  role="listbox">
+	    <div class="carousel-item active">
+	      <img class="d-block img-fluid" src="../img/sublim_3.jpeg" alt="First slide">
+	    </div>
+	    <div class="carousel-item">
+	      <img class="d-block img-fluid" src="../img/friends.jpg" alt="Second slide">
+	    </div>
+	    <div class="carousel-item" >
+	      <img class="d-block img-fluid" src="../img/teclado_2.jpg" alt="Third slide">
+	    </div>
+	  </div>
+	 
+	<div id="Principal">
+		
+			<br>
+			<div class="dis-3">
+			        <h1 class="display-3">Proyecto de Ejemplos</h1>
+			        <p class="lead">Creación de un proyecto que contiene ejemplos de una Página PHP con estilos de Bootstrap.</p>
+		      	</div>
+		      
+	            <div id="Cuerpo" class="container-fluid">
+		<div class="row">
+		      <div class="col dis-4">
+		             <h4>Ir a página Compuesta</h4>
+		             <p>Ésta página, es un ejemplo de la composición entre diferentes páginas encargadas cada una de lo suyo.</p>
+		             <p><a class="btn btn-primary" href= "../vistas/paginaCompuesta.php" role="button">Ver Detalles »</a></p>
+		      </div>
+		      <div class="col dis-4">
+		             <h4>Bienvenida</h4>
+		             <p>Página Principal que direccióna a los diferentes ejemplos </p>
+		             <p><a class="btn btn-primary" href="../vistas/bien.php" role="button">Ver Detalles »</a></p>
+		     </div>
+		      <div class="col dis-4">
+		             <h4>Form-Validación</h4>
+		             <p>En esta página se realiza una importante validación al ingreso de datos o formularios de ingreso</p>
+		             <p><a class="btn btn-primary" href="../vistas/form.php" role="button">Ver Detalles »</a></p>
+		      </div>
+		       <div class="col dis-4">
+		             <h4>Formulario-Vindicate</h4>
+		             <p>En esta página se aprecia una segunda versión de una validación de datos</p>
+		             <p><a class="btn btn-primary" href="../vistas/form_20170920.php" role="button">Ver Detalles »</a></p>
+		      </div>
 		</div>
-<br>
-<br>
-		<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-		  <button type="button" class="btn btn-secondary">1</button>
-		  <button type="button" class="btn btn-secondary">2</button>
-		  <div class="btn-group" role="group">
-		    <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		      Dropdown
-		    </button>
-		    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-		      <a class="dropdown-item" href="#">Dropdown link</a>
-		      <a class="dropdown-item" href="#">Dropdown link</a>
-		    </div>
-		  </div>
-		</div>
- 	</div>
-<br>
-<br>
- 	<div class="alert alert-primary" role="alert">
-  		This is a primary alert—check it out!
+	           </div>
+	  </div>
+	 
 	</div>
-<br>
-<br>
-<!-- HTML to write -->
-<a href="#" data-toggle="tooltip" title="Some tooltip text!">Hover over me</a>
 
-
-<!-- Generated markup by the plugin -->
-<div class="tooltip bs-tooltip-top" role="tooltip">
-  <div class="arrow"></div>
-  <div class="tooltip-inner">
-    Some tooltip text!
-  </div>
-</div>
-
-<br>
-<br>
-
- <div class="row">
-      <label id="use-selector-label">
-        <input id="use-selector" type="text">
-        <span data-title="Debe Ingresar nombre">Use selector option</span>
-      </label>
-    </div>
-<br>
-<br>
-<br>
-<div class="form-group has-success">
-  <label class="form-control-label" for="inputSuccess1">Input with success</label>
-  <input type="text" class="form-control" id="inputSuccess1">
-  <div class="form-control-feedback">Success! You've done it.</div>
-  <small class="form-text text-muted">Example help text that remains unchanged.</small>
-</div>
-<div class="form-group has-warning">
-  <label class="form-control-label" for="inputWarning1">Input with warning</label>
-  <input type="text" class="form-control form-control-warning" id="inputWarning1">
-  <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-  <small class="form-text text-muted">Example help text that remains unchanged.</small>
-</div>
-<div class="form-group has-danger">
-  <label class="form-control-label" for="inputDanger1">Input with danger</label>
-  <input type="text" class="form-control form-control-danger" id="inputDanger1">
-  <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-  <small class="form-text text-muted">Example help text that remains unchanged.</small>
-</div>
+ 	
 <?php 
 	include("compartidas/scripts.php");
  ?>
